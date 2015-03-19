@@ -1,6 +1,6 @@
-# Thesisvorlage für die Fakultät für Physik am KIT (v1.0.0)
+# Thesisvorlage für die Fakultät für Physik am KIT (v0.1.0)
 
-The repository consists of only one branch (master). This thesis class is strongly connected to the [Praktikumsvorlage](https://github.com/fsphys/praktikum-protokollvorlage-latex/).
+The repository consists of only one branch (master). This thesis class is strongly related to the [Praktikumsvorlage](https://github.com/fsphys/praktikum-protokollvorlage-latex/).
 
 ## Use the template
 First, obtain a copy of the template. You have multiple possibilities:
