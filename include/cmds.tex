@@ -1,0 +1,67 @@
+% Simple Stuff
+%\newcommand{\element}[3]{\makebox[\maxof{\widthof{$^{#2}$}}{\widthof{$^{#3}$}}][r]{$^{#3}_{\vphantom{#2}}$}\makebox[0px][r]{$_{#2}^{\vphantom{#3}}$}\textrm{#1}} %already defined in mhchem package (see \ce{})
+%\newcommand{\celsius}{{}^\circ C} % already defined in siunitx package
+%\newcommand{\angstrom}{\mathring{A}} % already defined in siunitx package
+\renewcommand{\d}{\ensuremath{\text{d}}}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+
+\newcommand{\op}[1]{\operatorname{#1}} % just an abbrev.
+\newcommand{\NN}{\mathbb{N}} % or change it to \mathbb if you like it better
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+%\newcommand{\NN}{\mathbbm{N}} % or change it to \mathbb if you like it better
+%\newcommand{\RR}{\mathbbm{R}}
+%\newcommand{\CC}{\mathbbm{C}}
+
+
+
+
+
+% Environments
+\newcommand{\margtodo} {\marginpar{\textbf{\textcolor{kitcolor}{ToDo}}}{}}
+\newcommand{\todo}[1] {{\textbf{\textcolor{kitcolor}{[\margtodo{}#1]}}}{}}
+\newenvironment{deprecated}{\begin{color}{gray}}{\end{color}}
+
+\newcommand{\mygraphics}[4]{\begin{figure}[#1]
+\centering
+\includegraphics[scale=#2]{./abb/#3.eps}
+\caption{#4}
+\label{fig:#3}
+\end{figure}}
+
+\newcommand{\mygraphicsrot}[4]{\begin{figure}[#1]
+\centering
+\includegraphics[angle=270,scale=#2]{./abb/#3.eps}
+\caption{#4}
+\label{fig:#3}
+\end{figure}}
+
+\newcommand{\mytable}[3]{\begin{table}[#1]
+\centering
+\caption{#3}
+\include{./tab/#2}
+\label{tab:#2}
+\end{table}}
+
+\newcommand{\arr}[2]{\begin{array}{#1}#2\end{array}}
+
+
+
+
+
+% Nice commands for quantum mechanics
+\newcommand{\pdb}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ket}[1]{\left|#1\right\rangle}
+\newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\braket}[2]{\left\langle#1 \middle| #2\right\rangle}
+\newcommand{\bratenket}[3]{\left\langle#1 \middle|\middle| #2 \middle|\middle| #3\right\rangle}
+\newcommand{\anglemean}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\neswarrows}{\text{\rotatebox[origin=c]{45}{$\rightleftarrows$}}}
+\newcommand{\updownarrows}{\text{\rotatebox[origin=c]{90}{$\rightleftarrows$}}}
+\newcommand{\downuparrows}{\text{\rotatebox[origin=c]{270}{$\rightleftarrows$}}}
+
+% creation and annihilation operators
+\newcommand{\cre}{c^\dagger}
+\newcommand{\anh}{c^{\vphantom{\dagger}}}
+\newcommand{\numb}{n^{\vphantom{\dagger}}}
