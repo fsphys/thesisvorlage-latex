@@ -92,7 +92,7 @@
 	\input{include/titlepage}
 	\input{include/preamble}
 
-	\begingroup \let\clearpage\relax % in order to avoid listoffigures and listoftables on new pages
+	\begingroup\let\clearpage\relax % in order to avoid listoffigures and listoftables on new pages
 	\tableofcontents
 	\listoffigures
 	\listoftables
@@ -118,7 +118,7 @@
 
 	% appendix for more or less interesting calculations etc.
 	\Appendix
-	\chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname} % so the appendix does not get a number in the ToC. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
+	\chapter*{\appendixname}\addcontentsline{toc}{chapter}{\appendixname} % so the appendix does not get a number in the ToC. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
 	\input{./chap/appendix.tex} %\cleardoublepage
 
 
