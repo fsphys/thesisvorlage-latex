@@ -29,10 +29,10 @@
 \newcommand{\thesisinstitute}{Institut für Experimentelle Kernphysik}
 \newcommand{\thesisreviewerone}{Prof. Dr. D. Cay}
 \newcommand{\thesisreviewertwo}{Prof. Dr. E. Vil}
-\newcommand{\thesistimestart}{01.04.2015}
-\newcommand{\thesistimeend}{30.09.2015}
-% page heading
-\newcommand{\thesispagehead}{Bachelor Thesis: \thesistopic}
+\newcommand{\thesistimestart}{01.04.2015} % on titlepage
+\newcommand{\thesistimeend}{30.09.2015} % on titlepage
+\newcommand{\thesistimehandin}{30.09.2015} % on second page 'preamble'
+\newcommand{\thesispagehead}{Bachelor Thesis: \thesisentopic} % page heading
 
 
 
@@ -45,7 +45,7 @@
 \hypersetup
 {
 	pdfauthor={\thesisauthor},
-	pdftitle={Bachelor Thesis: \thesistopic},
+	pdftitle={Bachelor Arbeit: \thesistopic},
 	pdfsubject={\thesislongtopic},
 	pdfkeywords={kit,physik,bachelor,thesis,\thesisauthor}
 }
@@ -89,7 +89,8 @@
 	% Titlepage and ToC
 	\FrontMatter
 
-	\input{include/titlepage} % \cleardoublepage
+	\input{include/titlepage}
+	\input{include/preamble}
 
 	\begingroup \let\clearpage\relax % in order to avoid listoffigures and listoftables on new pages
 	\tableofcontents
