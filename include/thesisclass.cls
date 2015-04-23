@@ -114,6 +114,8 @@
 %% --------------------------
 %% |    Globale Settings    |
 %% --------------------------
+\input{include/cmds}
+
 \setcounter{secnumdepth}{3}				% Numbering also for \subsubsections
 \setcounter{tocdepth}{3}				% Register \subsubsections in content directory
 
