@@ -146,7 +146,7 @@
 			\sisetup{output-decimal-marker={,}}
 			\sisetup{list-final-separator={ und }}	% "3, 4 and 5" in English or "3, 4 und 5" in German
 			\sisetup{range-phrase={ bis }}			% "1.5 to 1.8" in English or "1,5 bis 1,8" in German
-
+			\sisetup{locale=DE}
 		}
 		{
 			\sisetup{output-decimal-marker=.}
