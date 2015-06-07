@@ -1,41 +1,54 @@
 %% -----------------------
 %% |    Abbreviations    |
 %% -----------------------
-\newcommand{\op}[1]{\operatorname{#1}}			% to write operators that are not predefined; it's just an abbrev. for the long cmd
-\newcommand{\arr}[2]{\begin{array}{#1}#2\end{array}}	% to create arrays. very useful in math environment
+\newcommand{\op}[1]{\operatorname{#1}}                 % to write operators that
+                                                       % are not predefined;
+                                                       % it's just an abbrev.
+                                                       % for the long command
 
-\renewcommand{\d}{\ensuremath{\text{d}}}		% as the differential operator, e.g. \frac{\d x}{\d t}
-\newcommand{\NN}{\mathbb{N}}					% or change it to \mathbbm and include pkg bbm if you like it better
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\CC}{\mathbb{C}}
+\newcommand{\arr}[2]{\begin{array}{#1}#2\end{array}}   % to create arrays. very 
+                                                       % useful in math env
 
-\newcommand{\pdb}[2]{\frac{\partial #1}{\partial #2}} % partial derivative
+\renewcommand{\d}{\ensuremath{\text{d}}}               % as the differential 
+                                                       % operator, e.g. 
+                                                       % \frac{\d x}{\d t}
+
+\newcommand{\NN}{\mathbb{N}}                           % or change it to
+\newcommand{\RR}{\mathbb{R}}                           % \mathbbm and include
+\newcommand{\CC}{\mathbb{C}}                           % pkg bbm if you prefer
+
+\newcommand{\pdb}[2]{\frac{\partial #1}{\partial #2}}  % partial derivative
 
 
 %% -----------------------------------
 %% |    Commands and Environments    |
 %% -----------------------------------
-\newcommand{\margtodo} {\marginpar{\textbf{\textcolor{kitcolor}{ToDo}}}{}} % used by \todo command
-\newcommand{\todo}[1] {{\textbf{\textcolor{kitcolor}{[\margtodo{}#1]}}}{}} % for todo-notes inside the document
-\newenvironment{deprecated}{\begin{color}{gray}}{\end{color}}	% for something that you don't want to use anymore
+\newcommand{\margtodo}                                 % used by \todo command
+{\marginpar{\textbf{\textcolor{kitcolor}{ToDo}}}{}}
+\newcommand{\todo}[1]
+{{\textbf{\textcolor{kitcolor}{[\margtodo{}#1]}}}{}}   % for todo-notes inside 
+                                                       % the document
+\newenvironment{deprecated}                            % for something that you
+{\begin{color}{gray}}{\end{color}}                     % want to use no more
 
-\newcommand{\xcaption}[2]{\caption[#1]{\textbf{#1} #2}}	% nice caption command for short and long description
+\newcommand{\xcaption}[2]{\caption[#1]{\textbf{#1} #2}}% nice caption cmd for
+                                                       % short and long descrip.
 
-\newcommand{\xfigure}[5]{\begin{figure}[#1]	% a quick command for including graphics with all necessary variables
-\centering
-\includegraphics[scale=#2]{./fig/#3}
+\newcommand{\xfigure}[5]{\begin{figure}[#1]            % a quick command for
+\centering                                             % including graphics 
+\includegraphics[scale=#2]{./fig/#3}                   % with all necessary vars
 \xcaption{#4}{#5}
 \label{fig:#3}
 \end{figure}}
 
-\newcommand{\xfigurerot}[5]{\begin{figure}[#1]	% same as above, only image is rotated
-\centering
+\newcommand{\xfigurerot}[5]{\begin{figure}[#1]        % same as above, only
+\centering                                            % image is rotated
 \includegraphics[angle=270,scale=#2]{./fig/#3}
 \xcaption{#4}{#5}
 \label{fig:#3}
 \end{figure}}
 
-\newcommand{\xtable}[4]{\begin{table}[#1]		% same for tables
+\newcommand{\xtable}[4]{\begin{table}[#1]             % same for tables
 \centering
 \xcaption{#3}{#4}
 \rowcolors{3}{gray!10}{white}
@@ -48,18 +61,26 @@
 %% ------------------------------------
 %% |    Quantum Mechanics and Math    |
 %% ------------------------------------
-\newcommand{\ket}[1]{\left|#1\right\rangle}		% \ket{X}  ->  |X>
-\newcommand{\bra}[1]{\left\langle#1\right|}		% \bra{X}  ->  <X|
-\newcommand{\braket}[2]{\left\langle#1 \middle| #2\right\rangle}		% \braket{X}{Y}  ->  <X|Y>
-\newcommand{\bratenket}[3]{\left\langle#1 \middle|\middle| #2 \middle|\middle| #3\right\rangle}		% \bratenket{X}{Y}{Z}  ->  <X|Y|Z>
-\newcommand{\anglemean}[1]{\left\langle #1 \right\rangle}		% \anglemean{X}  ->  <X>
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}				% \norm{X}  ->  || X ||
+\newcommand{\ket}[1]{\left|#1\right\rangle}           % \ket{X}  ->  |X>
+\newcommand{\bra}[1]{\left\langle#1\right|}           % \bra{X}  ->  <X|
+\newcommand{\braket}[2]                               % \braket{X}{Y}  ->  <X|Y>
+{\left\langle#1 \middle| #2\right\rangle}
+\newcommand{\bratenket}[3]                            % \bratenket{X}{Y}{Z}  ->
+{\left\langle#1 \middle|\middle| #2 \middle|\middle|  % <X|Y|Z>
+#3\right\rangle}
+\newcommand{\anglemean}[1]                            % \anglemean{X}  ->  <X>
+{\left\langle #1 \right\rangle}                       % \norm{X}  ->  || X ||
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
-\newcommand{\updownarrows}{\text{\rotatebox[origin=c]{90}{$\rightleftarrows$}}}		% \ket\updownarrows  ->  |↑↓> (this is utf8!)
-\newcommand{\downuparrows}{\text{\rotatebox[origin=c]{270}{$\rightleftarrows$}}}	% \ket\updownarrows  ->  |↓↑>
-\newcommand{\neswarrows}{\text{\rotatebox[origin=c]{45}{$\rightleftarrows$}}}		% \ket\neswarrows  ->  |↗↙>
-\newcommand{\swnearrows}{\text{\rotatebox[origin=c]{225}{$\rightleftarrows$}}}		% \ket\swnearrows  ->  |↙↗>
+\newcommand{\updownarrows}                            % \ket\updownarrows  ->
+{\text{\rotatebox[origin=c]{90}{$\rightleftarrows$}}} % |↑↓> (cmt is utf8!)
+\newcommand{\downuparrows}                            % \ket\updownarrows  ->
+{\text{\rotatebox[origin=c]{270}{$\rightleftarrows$}}}% |↓↑>
+\newcommand{\neswarrows}                              % \ket\neswarrows  ->
+{\text{\rotatebox[origin=c]{45}{$\rightleftarrows$}}} % |↗↙>
+\newcommand{\swnearrows}                              % \ket\swnearrows  ->
+{\text{\rotatebox[origin=c]{225}{$\rightleftarrows$}}}% |↙↗>
 
-\newcommand{\cre}{c^\dagger}					% annihalation operator
-\newcommand{\anh}{c^{\vphantom{\dagger}}}		% creation operator
-\newcommand{\numb}{n^{\vphantom{\dagger}}}		% number operator
+\newcommand{\cre}{c^\dagger}                          % annihalation operator
+\newcommand{\anh}{c^{\vphantom{\dagger}}}             % creation operator
+\newcommand{\numb}{n^{\vphantom{\dagger}}}            % number operator

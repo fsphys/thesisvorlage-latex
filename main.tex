@@ -1,13 +1,13 @@
 \documentclass{include/thesisclass}
 % Main File - Based on thesisclass.cls
 % Comments are mostly in English
-% ---------------------------------------------------------------------------------------
-% Further files in folder :
+% ------------------------------------------------------------------------------
+% Further files in folder:
 %  - include/cmds.tex (for macros and additional commands)
 %  - include/kitlogo.pdf (for titlepage)
 %  - lit.bib (bibtex bibliography database)
 %  - include/titlepage.tex (for layout of titelpage)
-% ---------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 % Useful Supplied Packages:
 % amsmath, amssymb, mathtools, bbm, upgreek, nicefrac,
 % siunitx, varioref, booktabs, graphicx, tikz, multicol
@@ -29,6 +29,8 @@
 \newcommand{\thesisinstitute}{Institut für Experimentelle Kernphysik}
 \newcommand{\thesisreviewerone}{Prof. Dr. D. Cay}
 \newcommand{\thesisreviewertwo}{Prof. Dr. E. Vil}
+\newcommand{\thesisadvisorone}{} % to use: enter names and uncomment in titlepg
+\newcommand{\thesisadvisortwo}{}
 \newcommand{\thesistimestart}{01.04.2015} % on titlepage
 \newcommand{\thesistimeend}{30.09.2015} % on titlepage
 \newcommand{\thesistimehandin}{30.09.2015} % on second page 'preamble'
@@ -41,13 +43,14 @@
 %% ---------------------
 %% |    PDF - Setup    |
 %% ---------------------
-%% This information will appear embed into the PDF file, but will not be printed anywhere
+% This information will appear embed into the PDF file as meta data, but will 
+% not be printed anywhere
 \hypersetup
 {
-	pdfauthor={\thesisauthor},
-	pdftitle={Bachelor Arbeit: \thesistopic},
-	pdfsubject={\thesislongtopic},
-	pdfkeywords={kit,physik,bachelor,thesis,\thesisauthor}
+    pdfauthor={\thesisauthor},
+    pdftitle={Bachelor Arbeit: \thesistopic},
+    pdfsubject={\thesislongtopic},
+    pdfkeywords={kit,physik,bachelor,thesis,\thesisauthor}
 }
 
 
@@ -55,10 +58,10 @@
 
 
 %% --------------------------------------
-%% |    Settings for word separation    |
+%% |    Settings for Word Separation    |
 %% --------------------------------------
 % Help for separation:
-% In german package the following hints are additionally available:
+% In German package the following hints are additionally available:
 % "- = Additional separation
 % "| = Suppress ligation and possible separation (e.g. Schaf"|fell)
 % "~ = Hyphenation without separation (e.g. bergauf und "~ab)
@@ -68,13 +71,13 @@
 % Describe separation hints here:
 \hyphenation
 {
-	über-nom-me-nen an-ge-ge-be-nen
-	%Pro-to-koll-in-stan-zen
-	%Ma-na-ge-ment  Netz-werk-ele-men-ten
-	%Netz-werk Netz-werk-re-ser-vie-rung
-	%Netz-werk-adap-ter Fein-ju-stier-ung
-	%Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
-	%Kon-troll-in-stanz
+    über-nom-me-nen an-ge-ge-be-nen
+    %Pro-to-koll-in-stan-zen
+    %Ma-na-ge-ment  Netz-werk-ele-men-ten
+    %Netz-werk Netz-werk-re-ser-vie-rung
+    %Netz-werk-adap-ter Fein-ju-stier-ung
+    %Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
+    %Kon-troll-in-stanz
 }
 
 
@@ -86,54 +89,58 @@
 %% -----------------------
 \usepackage{lipsum} % for Lorem Ipsum text example
 \begin{document}
-	% Titlepage and ToC
-	\FrontMatter
+    % Titlepage and ToC
+    \FrontMatter
 
-	\input{include/titlepage}
-	\input{include/preamble}
+    \input{include/titlepage}
+    \input{include/preamble}
 
-	\begingroup\let\clearpage\relax % in order to avoid listoffigures and listoftables on new pages
-	\tableofcontents
-	\listoffigures
-	\listoftables
-	\endgroup
-	\cleardoublepage
-
-
-
-	% actual contents
-	\MainMatter
-
-	\chapter{Introduction}
-	\input{./chap/chapter1.tex}
-	\chapter{Theoretical Background}
-	\input{./chap/chapter2.tex}
-	\chapter{Experimental Investigations}
-	\input{./chap/chapter3.tex}
-
-	\emptychapter{ROOT Routines}{3} % Usage: \emptychapter{name of the chapter}{page displayed in toc}
-
-	\chapter{Conclusions}
-	\input{./chap/chapter4.tex}
-
-	% appendix for more or less interesting calculations etc.
-	\Appendix
-	\chapter*{\appendixname}\addcontentsline{toc}{chapter}{\appendixname} % so the appendix does not get a number in the ToC. \appendixname = Appendix oder Anhang (je nach ausgewählter Sprache)
-	\input{./chap/appendix.tex} %\cleardoublepage
+    \begingroup \let\clearpage\relax    % in order to avoid listoffigures and
+    \tableofcontents                    % listoftables on new pages
+    \listoffigures
+    \listoftables
+    \endgroup
+    \cleardoublepage
 
 
 
-	% BibTeX
-	\TheBibliography
+    % Contents
+    \MainMatter
 
-	%%% BIBTEX
-	% Use if you want citations to appear even if they are not referenced to: \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
-	%\nocite{*}
-	\bibliographystyle{babalpha}
-	\bibliography{lit.bib}
+    \chapter{Introduction}
+    \input{./chap/chapter1.tex}
+    \chapter{Theoretical Background}
+    \input{./chap/chapter2.tex}
+    \chapter{Experimental Investigations}
+    \input{./chap/chapter3.tex}
 
-	%%% THEBIBLIOGRAPHY
-	%\begin{thebibliography}{000}
-	%	\bibitem{ident}Entry into Bibliography
-	%\end{thebibliography}
+    \emptychapter{ROOT Routines}{3}     % usage: \emptychapter{name of the 
+                                        %        chapter}{page displayed in toc}
+
+    \chapter{Conclusions}
+    \input{./chap/chapter4.tex}
+
+    % appendix for more or less interesting calculations
+    \Appendix
+    \chapter*{\appendixname} \addcontentsline{toc}{chapter}{\appendixname}
+    % to make the appendix appear in ToC without number. \appendixname = 
+    % Appendix or Anhang (depending on chosen language)
+    \input{./chap/appendix.tex} %\cleardoublepage
+
+
+
+    % Bibliography
+    \TheBibliography
+
+    % BIBTEX
+    % use if you want citations to appear even if they are not referenced to: 
+    % \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
+    %\nocite{*}
+    \bibliographystyle{babalpha}
+    \bibliography{lit.bib}
+
+    % THEBIBLIOGRAPHY
+    %\begin{thebibliography}{000}
+    %    \bibitem{ident}Entry into Bibliography.
+    %\end{thebibliography}
 \end{document}
