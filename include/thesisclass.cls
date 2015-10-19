@@ -396,10 +396,11 @@
     \thispagestyle{plain}
 }
 
-\newcommand{\emptychapter}[2]
+\newcommand{\emptychapter}[2][]
 {
-    \clearpage\addtocounter{chapter}{1}\addtocontents{toc}{\protect\contentsline
-                           {chapter}{\protect\numberline {\thechapter}#1}{#2}{}}
+    \addtocounter{chapter}{1}
+    \addtocontents{toc}{\protect\contentsline
+        {chapter}{\protect\numberline {\thechapter}#2}{#1}{}}
 }
 
 %% **** END OF CLASS ****
