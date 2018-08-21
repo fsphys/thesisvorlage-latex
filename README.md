@@ -14,7 +14,7 @@ Compile on the command line using <code>make main.pdf</code> or your favorite La
 * <code>pdflatex main.tex</code>
 * <code>pdflatex main.tex</code>
 
-The template is known to be compatible with TeXLive 2012 and 2014.
+The template is known to be compatible with TeX Live 2012, 2014, and 2016.
 
 ## Contribute to the template
 

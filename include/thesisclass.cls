@@ -97,6 +97,7 @@
                                                 % definitions
 
 \usepackage[pdftex]{graphicx}                   % including images
+
 \usepackage[normal,
                 font={small,color=black},
                 labelfont=bf,
@@ -144,13 +145,9 @@
             linkbordercolor=kitcolor,
             citebordercolor=kitcolor]{hyperref}
 
-\expandafter\def\csname ver@subfig.sty\endcsname{}
-                                                % stop package svg from loading 
-                                                % package subfig
-                                                % http://tex.stackexchange.com/\
-                                                % questions/213273/undefined-  \
-                                                % control-sequence-            \
-                                                % at-begindocument
+\RequirePackage{scrlfile}                       % Prevent svg (<2.0) package 
+\PreventPackageFromLoading{subfig}              % from loading subfig.
+                                                % See also iss. #13
 \usepackage{svg}                                % include svg graphics
 
 \graphicspath{{./chap/}{./fig/}}                % To include graphics from the 
