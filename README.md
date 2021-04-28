@@ -1,5 +1,8 @@
 # Thesisvorlage für die Fakultät für Physik am KIT
 
+[![Build LaTeX document](https://github.com/fsphys/thesisvorlage-latex/actions/workflows/build_latex.yml/badge.svg)](https://github.com/fsphys/thesisvorlage-latex/actions/workflows/build_latex.yml)
+[![PDF Preview](https://img.shields.io/badge/docs-dev-blue.svg)](https://nightly.link/fsphys/thesisvorlage-latex/workflows/build_latex/master/PDF.zip)
+
 This thesis class is strongly related to the [Praktikumsvorlage](https://github.com/fsphys/praktikum-protokollvorlage-latex/).
 
 ## Use the template
