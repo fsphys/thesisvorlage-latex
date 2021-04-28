@@ -14,7 +14,7 @@ jobs:
         with:
           run: |
             apk add make
-            make
+            make -B
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
