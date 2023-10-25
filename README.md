@@ -1,4 +1,6 @@
-# Thesisvorlage für die Fakultät für Physik am KIT
+# (Archived/Archiviert) Thesisvorlage für die Fakultät für Physik am KIT
+
+**This repository is no longer maintained!** See the official [KIT template](https://gitlab.kit.edu/kit/kastel/sdq/dokumentvorlagen/abschlussarbeiten) as an up to date alternative https://gitlab.kit.edu/kit/kastel/sdq/dokumentvorlagen/abschlussarbeiten !
 
 [![Build LaTeX document](https://github.com/fsphys/thesisvorlage-latex/actions/workflows/build_latex.yml/badge.svg)](https://github.com/fsphys/thesisvorlage-latex/actions/workflows/build_latex.yml)
 [![PDF Preview](https://img.shields.io/badge/docs-dev-blue.svg)](https://nightly.link/fsphys/thesisvorlage-latex/workflows/build_latex/master/PDF.zip)
